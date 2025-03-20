@@ -8,6 +8,7 @@ const passport = require('passport');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const categoryRoutes = require('./routes/categoryRoutes');
 
 const app = express();
 const port = 3007;
@@ -28,6 +29,6 @@ app.use(passport.session());
 app.use(cookieParser());
 app.use(flash());
 
-app.use('/', authRoutes, blogRoutes);
+app.use('/', authRoutes, blogRoutes, categoryRoutes);
 
 app.listen(port, err => !err && console.log(`Server is Running is http://localhost:${port}`));

@@ -1,0 +1,44 @@
+<!-- ======= HTML Head ======= -->
+<%- include('components/htmlHead') %>
+
+<body>
+<!-- ======= Header ======= -->
+<%- include('components/header') %>
+<!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<%- include('components/sidebar') %>
+<!-- End Sidebar-->
+
+<!-- ======= Main ======= -->
+<main id="main" class="main">
+    <section class="section">
+        <div class="row justify-content-center py-5">
+          <div class="col-lg-8">
+              <!-- Floating Labels Form -->
+              <form class="row g-3" action="/addCategory" method="post">
+                  <div class="col-12">
+                        <label for="yourCategory" class="form-label">Add Category</label>
+                        <input type="text" name="category" class="form-control" id="yourCategory" required>
+                        <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+              </form>
+              <!-- End floating Labels Form -->
+          </div>
+        </div>
+    </section>
+</main>
+<!-- End Main -->
+
+<!-- ======= Footer ======= -->
+<%- include('components/footer') %>
+<!-- End Footer -->
+ 
+<!-- Vendor JS Files -->
+<%- include('components/scripts') %>
+</body>
+
+</html>
