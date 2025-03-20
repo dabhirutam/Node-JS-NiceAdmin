@@ -5,11 +5,17 @@
 
 <!-- Alert msg-->
  <% if(msg){ %>
-    <div class="alert bg-white position-fixed start-50 translate-middle shadow border" style="min-width: 150px;z-index: 1100;" role="alert">
-        <%= msg %>
+    <div class="alert p-2 px-3 rounded bg-white position-fixed start-50 translate-middle shadow d-flex align-items-center justify-content-center border-0 border-start border-success" style="min-width: 150px;z-index: 1100;border-width: 10px !important;" role="alert">
+        <div class="pe-3">
+            <i class="bi bi-check-circle text-success fs-1"></i>
+        </div>
+        <div>
+            <h4 class="m-0 text-black fw-bold">Success</h4>
+            <p class="m-0 text-secondary opacity-75 fw-medium">Your account has been saved.</p>
+        </div>
     </div>
- <% } %>
-
+<% } %>
+    
 <!-- ======= Header ======= -->
 <%- include('components/header') %>
 <!-- End Header -->
@@ -695,7 +701,7 @@
 
 <script>
     setTimeout(() => {
-        document.querySelector('.alert').style.display="none"
+        document.querySelector('.alert').classList.replace("d-flex", "d-none");
     }, 3000)
 </script>
 </body>

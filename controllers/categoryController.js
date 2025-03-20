@@ -1,11 +1,12 @@
 const categoryModel = require("../models/categoryModal");
+const subCategoryModel = require("../models/subcategoryModal");
 
 
-const AddCategory = (req, res) => {
+const Category = (req, res) => {
     res.render('addCategory');
 }
 
-const SaveCategory = async (req, res) => {
+const AddCategory = async (req, res) => {
 
     const category = new categoryModel({
         category: req.body.category
@@ -13,7 +14,24 @@ const SaveCategory = async (req, res) => {
 
     await category.save();
 
-    res.redirect('/addcategory')
+    res.redirect('/category');
 }
 
-module.exports = { AddCategory, SaveCategory }
+const SubCategory = async (req, res) => {
+    const categorys = await categoryModel.find(); 
+
+    res.render('addSubCategory', {categorys});
+}
+
+const AddSubCategory = async (req, res) => {
+    const SubCategory = new subCategoryModel({
+        subCategory: req.body.subCategory,
+        categoryID: req.body.categoryID
+    });
+
+    await SubCategory.save();
+
+    res.redirect('/subCategory');
+}
+
+module.exports = { AddCategory, Category, SubCategory, AddSubCategory }
