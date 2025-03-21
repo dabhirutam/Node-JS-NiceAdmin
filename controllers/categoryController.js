@@ -34,4 +34,9 @@ const AddSubCategory = async (req, res) => {
     res.redirect('/subCategory');
 }
 
-module.exports = { AddCategory, Category, SubCategory, AddSubCategory }
+const ViewSubcategory = async (req, res) => {
+    const subCategorys = await subCategoryModel.find().populate('categoryID', 'category');
+    res.render('viewSubCategory', {subCategorys});
+}
+
+module.exports = { AddCategory, Category, SubCategory, AddSubCategory, ViewSubcategory }

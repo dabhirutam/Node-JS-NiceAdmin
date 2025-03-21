@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+.table-primary{
+  --bs-table-bg: #717ff5 !important;
+  --bs-table-color: #fff !important;
+}
+
 a:hover {
   color: #717ff5;
   text-decoration: none;

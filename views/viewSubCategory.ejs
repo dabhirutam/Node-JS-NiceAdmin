@@ -1,0 +1,51 @@
+<!-- ======= HTML Head ======= -->
+<%- include('components/htmlHead') %>
+
+<body>
+<!-- ======= Header ======= -->
+<%- include('components/header') %>
+<!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<%- include('components/sidebar') %>
+<!-- End Sidebar-->
+
+<!-- ======= Main ======= -->
+<main id="main" class="main">
+    <section class="section">
+        <div class="container mt-4">
+            <h2 class="mb-3">Simple Bootstrap Table</h2>
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>SubCategory</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subCategorys.forEach((sub, i) => { %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= sub.subCategory %></td>
+                            <td><%= sub.categoryID.category %></td>
+                            <td>Action</td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+<!-- End Main -->
+
+<!-- ======= Footer ======= -->
+<%- include('components/footer') %>
+<!-- End Footer -->
+ 
+<!-- Vendor JS Files -->
+<%- include('components/scripts') %>
+</body>
+
+</html>
